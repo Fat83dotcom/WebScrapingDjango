@@ -15,15 +15,15 @@ def coreCnn(request):
     with open('Core/templates/Core/noticiasCnn.html', 'w') as arquivo:
         url = [
             'https://www.cnnbrasil.com.br/politica/',
-            'https://www.cnnbrasil.com.br/nacional/',
-            'https://www.cnnbrasil.com.br/business/',
-            'https://www.cnnbrasil.com.br/internacional/',
-            'https://www.cnnbrasil.com.br/esporte/',
-            'https://www.cnnbrasil.com.br/saude/',
-            'https://www.cnnbrasil.com.br/tecnologia/',
-            'https://www.cnnbrasil.com.br/entretenimento/',
-            'https://www.cnnbrasil.com.br/estilo/',
-            'https://www.cnnbrasil.com.br/loterias/',
+            # 'https://www.cnnbrasil.com.br/nacional/',
+            # 'https://www.cnnbrasil.com.br/business/',
+            # 'https://www.cnnbrasil.com.br/internacional/',
+            # 'https://www.cnnbrasil.com.br/esporte/',
+            # 'https://www.cnnbrasil.com.br/saude/',
+            # 'https://www.cnnbrasil.com.br/tecnologia/',
+            # 'https://www.cnnbrasil.com.br/entretenimento/',
+            # 'https://www.cnnbrasil.com.br/estilo/',
+            # 'https://www.cnnbrasil.com.br/loterias/',
         ]
         arquivo.write(
             '''
@@ -37,7 +37,7 @@ def coreCnn(request):
             html = BeautifulSoup(resposta.text, 'html.parser')
             arquivo.write(
                 '''
-    <div>
+    <div class="geral">
         <a href="#https://www.cnnbrasil.com.br/politica/">Política</a>
         <a href="#https://www.cnnbrasil.com.br/nacional/">Nacional</a>
         <a href="#https://www.cnnbrasil.com.br/business/">Business</a>
@@ -69,9 +69,9 @@ def coreCnn(request):
                     print(texto)
                     print(len(texto))
                     if texto is None:
-                        arquivo.write('<div> <p>Sem texto ...</p> </div>')
+                        arquivo.write('<div class="geral"> <p>Sem texto ...</p> </div>')
                     else:
-                        arquivo.write(f'<div> <p>{texto}</p> </div>')
+                        arquivo.write(f'<div class="geral"> <p>{texto}</p> </div>')
         arquivo.write(
 '''</main>
 {%endblock%}'''

@@ -1,9 +1,36 @@
 {%load static%}
 <header>
-    <nav>
-        <ul>
-            
-        </ul>
-    </nav>
-    <h1><a href="{%url 'index'%}">Home</a></h1>
+  <nav>
+    <div id="navigation">
+      <li>
+        <img src="{%static '1200px-America_Noticias_-_Logo.svg.png'%}" alt="" />
+      </li>
+      <ul>
+        <li><a href="{%url 'index'%}">Home</a></li>
+        <li>
+          <a href="#">Portais</a>
+          <ul>
+            <li class="sNivel">
+              <a href="#">Nacionais</a>
+              <ul>
+                <li><a href="{% url 'cnn'%}">CNN</a></li>
+                <!-- <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li> -->
+              </ul>
+            </li>
+            <li class="sNivel">
+              <a href="#">Internacionais</a>
+              <ul>
+                <!-- <li><a href="{% url 'cnn'%}">CNN</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li> -->
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
