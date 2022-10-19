@@ -15,15 +15,15 @@ def coreCnn(request):
     with open('Core/templates/Core/noticiasCnn.html', 'w') as arquivo:
         url = [
             'https://www.cnnbrasil.com.br/politica/',
-            # 'https://www.cnnbrasil.com.br/nacional/',
-            # 'https://www.cnnbrasil.com.br/business/',
-            # 'https://www.cnnbrasil.com.br/internacional/',
-            # 'https://www.cnnbrasil.com.br/esporte/',
-            # 'https://www.cnnbrasil.com.br/saude/',
-            # 'https://www.cnnbrasil.com.br/tecnologia/',
-            # 'https://www.cnnbrasil.com.br/entretenimento/',
-            # 'https://www.cnnbrasil.com.br/estilo/',
-            # 'https://www.cnnbrasil.com.br/loterias/',
+            'https://www.cnnbrasil.com.br/nacional/',
+            'https://www.cnnbrasil.com.br/business/',
+            'https://www.cnnbrasil.com.br/internacional/',
+            'https://www.cnnbrasil.com.br/esporte/',
+            'https://www.cnnbrasil.com.br/saude/',
+            'https://www.cnnbrasil.com.br/tecnologia/',
+            'https://www.cnnbrasil.com.br/entretenimento/',
+            'https://www.cnnbrasil.com.br/estilo/',
+            'https://www.cnnbrasil.com.br/loterias/',
         ]
         arquivo.write(
             '''
@@ -66,8 +66,8 @@ def coreCnn(request):
                     dataMateria = materia.select_one('.post__data').get_text(strip=True)
                     texto = materia.select_one('.post__content').get_text(' | ', strip=True)
                     arquivo.write(f'<h3>Data Matéria: {dataMateria}</h3> </div>')
-                    print(texto)
-                    print(len(texto))
+                    # print(texto)
+                    # print(len(texto))
                     if texto is None:
                         arquivo.write('<div class="geral"> <p>Sem texto ...</p> </div>')
                     else:
