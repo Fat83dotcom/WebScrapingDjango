@@ -66,8 +66,6 @@ def coreCnn(request):
                     dataMateria = materia.select_one('.post__data').get_text(strip=True)
                     texto = materia.select_one('.post__content').get_text(' | ', strip=True)
                     arquivo.write(f'<h3>Data Matéria: {dataMateria}</h3> </div>')
-                    # print(texto)
-                    # print(len(texto))
                     if texto is None:
                         arquivo.write('<div class="geral"> <p>Sem texto ...</p> </div>')
                     else:
