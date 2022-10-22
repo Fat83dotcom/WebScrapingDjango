@@ -10,17 +10,17 @@ def index(request):
     })
 
 
-# def consultaPortaCnn():
-#     with connection.cursor() as cursor:
-#         sql = 
-
 def coreCnn(request):
     if request.method != 'GET':
         return render(request, 'Core/noticiasCnn.html')
     else:
-        consultaSQL = Portalcnn.objects.prefetch_related('referencia_site')
-        # print(consultaSQL.get(referencia_site_id=0))
+        dadosAtualizacaoCnn = Portalcnn.objects.get(pk=0)
+        consultaSQLPortalCnn = Portalcnn.objects.all()
+        consultaSQLMateriasPortal = Materiasportal.objects.prefetch_related(
+            'referencia_site').order_by('referencia_site_id')
         contexto = {
-            'dados': consultaSQL,
+            'dadosPortal': consultaSQLPortalCnn,
+            'dadosMateria': consultaSQLMateriasPortal,
+            'dadosAtualizacao': dadosAtualizacaoCnn
         }
         return render(request, 'Core/noticiasCnn.html', contexto)
