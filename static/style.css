@@ -12,6 +12,7 @@ body{
     align-items: center;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 a{
     text-decoration: none;
@@ -56,62 +57,118 @@ header nav img{
     display: flex;
     justify-items: center;
     align-items: center;
-    font-size: 32px;
+    flex-direction: column;
+    font-size: 28px;
     padding: 20px;
     text-align: center;
 }
-/* parte do menu */
+.navNoticias{
+    padding: 15px;
+}
+.navNoticias a{
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+}
+.navNoticias a:hover{
+    background-color: var(--brau);
+    color: var(--branco);
+    box-shadow: 2px 2px 2px var(--escuro);
+    border-radius: 2px;
+    
+}
+.conteudoPortais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.conteinercabecalhoMaterias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--brau);
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px var(--escuro);
+}
+.conteinercabecalhoMaterias div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.conteinerTexto{
+    background-color: var(--escuro);
+    color: var(--branco);
+    font-size: 22px;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px var(--brau);
+}
+.conteinerTexto p{
+    text-align: justify;
+}
+/* Inicio parte do menu */
 ul {
-display: flex;
-align-items: center;
-justify-content: center;
-list-style-type: none;
-width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    width: auto;
 }
 li ul {
-display: none;
+    display: none;
 }
 li {
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 5px;
-position: relative;
-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+    right: 20px;
 }
 li:hover {
-background-color: var(--brau);
+    background-color: var(--brau);
 }
 ul a {
-display: flex;
-align-items: center;
-justify-content: center;
-text-decoration: none;
-color: var(--escuro);
-width: 120px;
-height: 50px;
-text-align: center;
-line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--escuro);
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
 }
 a:hover {
-color: var(--branco);
+    color: var(--branco);
 }
 li:hover ul {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-position: absolute;
-top: 100%;
-left: 0;
-background-color: var(--branco);
-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--branco);
+    width: 100px;
 }
 li a {
-text-align: center;
+    text-align: center;
 }
 li.sNivel ul {
-display: none;
+    display: none;
 }
 li.sNivel:hover ul {
     display: flex;
@@ -120,3 +177,4 @@ li.sNivel:hover ul {
     top: 0;
     left: 100%;
 }
+/* Termino parte do menu */
