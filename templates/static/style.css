@@ -56,7 +56,8 @@ header nav img{
     display: flex;
     justify-items: center;
     align-items: center;
-    font-size: 32px;
+    flex-direction: column;
+    font-size: 28px;
     padding: 20px;
     text-align: center;
 }

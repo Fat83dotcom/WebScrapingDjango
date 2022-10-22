@@ -2,17 +2,12 @@
 {%extends 'base.html'%}
 {%block conteudo%}
 <main>    
-    
-    <div class="geral">
-        <a href="#https://www.cnnbrasil.com.br/politica/">Política</a>
-        <a href="#https://www.cnnbrasil.com.br/nacional/">Nacional</a>
-        <a href="#https://www.cnnbrasil.com.br/business/">Business</a>
-        <a href="#https://www.cnnbrasil.com.br/internacional/">Internacional</a>
-        <a href="#https://www.cnnbrasil.com.br/esporte/">Esporte</a>
-        <a href="#https://www.cnnbrasil.com.br/saude/">Saude</a>
-        <a href="#https://www.cnnbrasil.com.br/tecnologia/">Tecnologia</a>
-        <a href="#https://www.cnnbrasil.com.br/entretenimento/">Entretenimento</a>
-        <a href="#https://www.cnnbrasil.com.br/estilo/">Estilo</a>
-        <a href="#https://www.cnnbrasil.com.br/loterias/">Loterias</a>
+    <div class="navNoticias">
+        {%for dado in dados%}
+            <a href="#">{{dado.nome_sessao}}</a>
+            <!-- <p>{{link}}</p> -->
+        {%endfor%}
     </div>
-                <div class="titulo"><h1 id="https://www.cnnbrasil.com.br/politica/">Seção do Site:</h1> <a href="https://www.cnnbrasil.com.br/politica/" target="_blanck">https://www.cnnbrasil.com.br/politica/</a> </div><div class="titulo"> <h2>Nº 1 | Horario do Scraping: 19/10/2022 13:03:11 </h2> <h3>     Lula divulga carta e critica uso político da religião; Bolsonaro recebe prefeitos  </h3> <a href="https://www.cnnbrasil.com.br/politica/lula-divulga-carta-e-critica-uso-politico-da-religiao-bolsonaro-recebe-prefeitos/" target="_blanck">Link Materia</a> <h3>Data Matéria: 19/10/2022 às 12:46</h3> </div>
+
+</main>
+{%endblock%}
