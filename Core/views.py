@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Materiasportal, Portalcnn
 from django.db import connection
 
+
 def index(request):
     consultaSQL = Portalcnn.objects.get(pk=0)
     return render(request, 'Core/index.html', {

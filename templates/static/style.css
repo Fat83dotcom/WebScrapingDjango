@@ -3,7 +3,6 @@
     --brau: #eb4444;
     --preto: #000;
     --escuro: #6b0909;
-
 }
 body{
     display: flex;
@@ -76,7 +75,6 @@ header nav img{
     color: var(--branco);
     box-shadow: 2px 2px 2px var(--escuro);
     border-radius: 2px;
-    
 }
 .conteudoPortais{
     display: flex;

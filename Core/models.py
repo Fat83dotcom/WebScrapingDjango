@@ -30,3 +30,7 @@ class Portalcnn(models.Model):
     class Meta:
         managed = False
         db_table = 'portalcnn'
+
+
+class LogServicos(models.Model):
+    dt_hr_exec_func = models.DateTimeField(null= True)
