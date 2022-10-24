@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
-from .models import Materiasportal, Portalcnn
+from .models import Materiasportalcnn, Portalcnn
 from django.db import connection
 
 
@@ -17,7 +17,7 @@ def coreCnn(request):
     else:
         dadosAtualizacaoCnn = Portalcnn.objects.get(pk=0)
         consultaSQLPortalCnn = Portalcnn.objects.all()
-        consultaSQLMateriasPortal = Materiasportal.objects.prefetch_related(
+        consultaSQLMateriasPortal = Materiasportalcnn.objects.prefetch_related(
             'referencia_site').order_by('referencia_site_id')
         contexto = {
             'dadosPortal': consultaSQLPortalCnn,

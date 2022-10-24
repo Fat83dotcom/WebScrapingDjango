@@ -8,7 +8,7 @@
 from django.db import models
 
 
-class Materiasportal(models.Model):
+class Materiasportalcnn(models.Model):
     id_pk = models.IntegerField(primary_key=True)
     referencia_site = models.ForeignKey('Portalcnn', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
     dt_materia = models.DateField(blank=True, null=True)
@@ -18,8 +18,7 @@ class Materiasportal(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'materiasportal'
-
+        db_table = 'materiasportalcnn'
 
 class Portalcnn(models.Model):
     id_pk = models.IntegerField(primary_key=True)
@@ -34,3 +33,4 @@ class Portalcnn(models.Model):
 
 class LogServicos(models.Model):
     dt_hr_exec_func = models.DateTimeField(null= True)
+    func_portal = models.CharField(max_length=50, null=True)

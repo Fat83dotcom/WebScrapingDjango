@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Portalcnn, LogServicos
 
-# Register your models here.
+
+class LogServicosAdmin(admin.ModelAdmin):
+    list_display = ['id', 'dt_hr_exec_func', 'func_portal']
+
+
+admin.site.register(LogServicos, LogServicosAdmin)
