@@ -1,5 +1,6 @@
 
 {%extends 'base.html'%}
+{%block titulo%} CNN{%endblock%}
 {%block conteudo%}
 <main class="conteudoPortais">   
     <h1>Portal CNN</h1>
@@ -25,8 +26,7 @@
                         <p>{{dadoM.dt_materia}}</p>
                     </div>
                     <div>
-                        <h3>Link da Matéria: </h3>
-                        <a href="{{dadoM.link_materia}}" target="_blank">Link da Matéria no Portal</a>
+                        <h3><a href="{{dadoM.link_materia}}" target="_blank">Link da Matéria no Portal</a> </h3>
                     </div>
                 </div>
                 <div class="conteinerTexto conteudoPortais">
