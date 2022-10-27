@@ -22,6 +22,10 @@ def coreCnn(request):
         contexto = {
             'dadosPortal': consultaSQLPortalCnn,
             'dadosMateria': consultaSQLMateriasPortal,
-            'dadosAtualizacao': dadosAtualizacaoCnn
+            'dadosAtualizacao': dadosAtualizacaoCnn,
         }
         return render(request, 'Core/noticiasCnn.html', contexto)
+
+
+def coreG1(request):
+    pass
