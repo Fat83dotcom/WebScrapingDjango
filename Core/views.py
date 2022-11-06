@@ -30,11 +30,9 @@ def coreG1(request):
         return render(request, 'Core/noticiasG1.html')
     else:
         dadosAtualizacaoG1 = Portalg1.objects.get(pk=0)
-        consultaSQLPortalG1 = Portalg1.objects.all()
+        consultaSQLPortalG1 = Portalg1.objects.all().order_by('id_pk')
         consultaSQLMateriasPortal = Materiasportalg1.objects.prefetch_related(
             'referencia_site').order_by('referencia_site_id')
-        for i in consultaSQLMateriasPortal:
-            print(i.texto_materia)
             
         contexto = {
             'dadosPortal': consultaSQLPortalG1,
