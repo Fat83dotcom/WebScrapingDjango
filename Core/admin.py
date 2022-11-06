@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Portalcnn, LogServicos
+from .models import LogServicos
 
 
 class LogServicosAdmin(admin.ModelAdmin):
