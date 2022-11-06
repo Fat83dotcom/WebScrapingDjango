@@ -19,7 +19,7 @@
             </nav>
             <h2 id="{{dadoP.nome_sessao}}">{{dadoP.nome_sessao|title}}</h2>
             {%for dadoM in dadosMateria%}
-                {%if dadoM.referencia_site.nome_sessao == dadoP.nome_sessao%}
+                {%if dadoM.referencia_site_id == dadoP.id_pk%}
                 <div class="conteinercabecalhoMaterias">
                     <div>
                         <h3>Data da Matéria: </h3>
