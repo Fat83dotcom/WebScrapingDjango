@@ -8,6 +8,17 @@
 from django.db import models
 
 
+class Portalcnn(models.Model):
+    id_pk = models.IntegerField(primary_key=True)
+    dt_hr_pesquisa = models.DateTimeField(blank=True, null=True)
+    nome_sessao = models.CharField(max_length=100, blank=True, null=True)
+    link_site = models.CharField(unique=True, max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'portalcnn'
+
+
 class Materiasportalcnn(models.Model):
     id_pk = models.IntegerField(primary_key=True)
     referencia_site = models.ForeignKey('Portalcnn', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
@@ -19,16 +30,6 @@ class Materiasportalcnn(models.Model):
     class Meta:
         managed = False
         db_table = 'materiasportalcnn'
-
-class Portalcnn(models.Model):
-    id_pk = models.IntegerField(primary_key=True)
-    dt_hr_pesquisa = models.DateTimeField(blank=True, null=True)
-    nome_sessao = models.CharField(max_length=100, blank=True, null=True)
-    link_site = models.CharField(unique=True, max_length=255, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'portalcnn'
 
 
 class Portalg1(models.Model):
