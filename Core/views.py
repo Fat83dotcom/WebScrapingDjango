@@ -1,13 +1,11 @@
 from datetime import datetime
 from django.shortcuts import render
-from .models import Materiasportalcnn, Portalcnn
+from .models import Portalcnn, Materiasportalcnn, Portalg1, Materiasportalg1
 from django.db import connection
 
 
 def index(request):
-    consultaSQL = Portalcnn.objects.get(pk=0)
     return render(request, 'Core/index.html', {
-        'dtAtualizacao': consultaSQL,
     })
 
 
@@ -28,4 +26,19 @@ def coreCnn(request):
 
 
 def coreG1(request):
-    pass
+    if request.method != 'GET':
+        return render(request, 'Core/noticiasG1.html')
+    else:
+        dadosAtualizacaoG1 = Portalg1.objects.get(pk=0)
+        consultaSQLPortalG1 = Portalg1.objects.all()
+        consultaSQLMateriasPortal = Materiasportalg1.objects.prefetch_related(
+            'referencia_site').order_by('referencia_site_id')
+        for i in consultaSQLMateriasPortal:
+            print(i.texto_materia)
+            
+        contexto = {
+            'dadosPortal': consultaSQLPortalG1,
+            'dadosMateria': consultaSQLMateriasPortal,
+            'dadosAtualizacao': dadosAtualizacaoG1,
+        }
+        return render(request, 'Core/noticiasG1.html', contexto)
