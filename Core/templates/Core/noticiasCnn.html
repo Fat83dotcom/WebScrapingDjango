@@ -22,17 +22,18 @@
                 {%if dadoM.referencia_site_id == dadoP.id_pk%}
                 <div class="conteinercabecalhoMaterias">
                     <div>
-                        <h3>Data da Matéria: </h3>
+                        <h2><a href="#{{dadoP.nome_sessao}}">{{dadoP.nome_sessao|title}}</a></h2>
+                    </div>
+                    <div>
+                        <h3>Data: </h3>
                         <p>{{dadoM.dt_materia}}</p>
                     </div>
                     <div>
-                        <h3><a href="{{dadoM.link_materia}}" target="_blank">Link da Matéria no Portal</a> </h3>
+                        <h3><a href="{{dadoM.link_materia}}" target="_blank">Matéria no Portal</a> </h3>
                     </div>
                 </div>
                 <div class="conteinerTexto conteudoPortais">
-                    <h3>Título da Matéria:</h3>
                     <h2>{{dadoM.titulo_materia}}</h2>
-                    <h3>Matéria:</h3>
                     <p>{{dadoM.texto_materia}}</p>
                 </div>
                 {%endif%}
