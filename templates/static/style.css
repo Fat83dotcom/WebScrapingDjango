@@ -28,6 +28,9 @@ a{
 .geral p{
     text-align: justify;
 }
+.content-text__container{
+    text-align: justify;
+}
 .titulo{
     background-color: tomato;
 }
