@@ -3,7 +3,6 @@
     --brau: #eb4444;
     --preto: #000;
     --escuro: #6b0909;
-
 }
 body{
     display: flex;
@@ -27,6 +26,9 @@ a{
     margin: 20px;
 }
 .geral p{
+    text-align: justify;
+}
+.content-text__container{
     text-align: justify;
 }
 .titulo{
@@ -64,6 +66,7 @@ header nav img{
 }
 .navNoticias{
     padding: 15px;
+    margin: 15px;
 }
 .navNoticias a{
     margin: 10px;
@@ -76,7 +79,6 @@ header nav img{
     color: var(--branco);
     box-shadow: 2px 2px 2px var(--escuro);
     border-radius: 2px;
-    
 }
 .conteudoPortais{
     display: flex;
