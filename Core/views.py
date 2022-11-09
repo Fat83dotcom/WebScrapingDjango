@@ -33,7 +33,6 @@ def coreG1(request):
         consultaSQLPortalG1 = Portalg1.objects.all().order_by('id_pk')
         consultaSQLMateriasPortal = Materiasportalg1.objects.prefetch_related(
             'referencia_site').order_by('referencia_site_id')
-            
         contexto = {
             'dadosPortal': consultaSQLPortalG1,
             'dadosMateria': consultaSQLMateriasPortal,
