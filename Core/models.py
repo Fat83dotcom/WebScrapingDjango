@@ -12,7 +12,8 @@ class Portalcnn(models.Model):
     id_pk = models.IntegerField(primary_key=True)
     dt_hr_pesquisa = models.DateTimeField(blank=True, null=True)
     nome_sessao = models.CharField(max_length=100, blank=True, null=True)
-    link_site = models.CharField(unique=True, max_length=255, blank=True, null=True)
+    link_site = models.CharField(
+        unique=True, max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -21,7 +22,8 @@ class Portalcnn(models.Model):
 
 class Materiasportalcnn(models.Model):
     id_pk = models.IntegerField(primary_key=True)
-    referencia_site = models.ForeignKey('Portalcnn', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
+    referencia_site = models.ForeignKey(
+        'Portalcnn', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
     dt_materia = models.DateField(blank=True, null=True)
     link_materia = models.TextField(blank=True, null=True)
     titulo_materia = models.TextField(blank=True, null=True)
@@ -36,16 +38,18 @@ class Portalg1(models.Model):
     id_pk = models.IntegerField(primary_key=True)
     dt_hr_pesquisa = models.DateTimeField(blank=True, null=True)
     nome_sessao = models.CharField(max_length=100, blank=True, null=True)
-    link_site = models.CharField(unique=True, max_length=255, blank=True, null=True)
+    link_site = models.CharField(
+        unique=True, max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'portalg1'
 
 
-class Materiasportalg1(models.Model):
+class Materiasportaluol(models.Model):
     id_pk = models.IntegerField(primary_key=True)
-    referencia_site = models.ForeignKey('Portalg1', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
+    referencia_site = models.ForeignKey(
+        'Portalg1', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
     dt_materia = models.DateField(blank=True, null=True)
     link_materia = models.TextField(blank=True, null=True)
     titulo_materia = models.TextField(blank=True, null=True)
@@ -56,6 +60,32 @@ class Materiasportalg1(models.Model):
         db_table = 'materiasportalg1'
 
 
+class Portaluol(models.Model):
+    id_pk = models.IntegerField(primary_key=True)
+    dt_hr_pesquisa = models.DateTimeField(blank=True, null=True)
+    nome_sessao = models.CharField(max_length=100, blank=True, null=True)
+    link_site = models.CharField(
+        unique=True, max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'portaluol'
+
+
+class Materiasportaluol(models.Model):
+    id_pk = models.IntegerField(primary_key=True)
+    referencia_site = models.ForeignKey(
+        'Portaluol', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
+    dt_materia = models.DateField(blank=True, null=True)
+    link_materia = models.TextField(blank=True, null=True)
+    titulo_materia = models.TextField(blank=True, null=True)
+    texto_materia = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'materiasportaluol'
+
+
 class LogServicos(models.Model):
-    dt_hr_exec_func = models.DateTimeField(null= True)
+    dt_hr_exec_func = models.DateTimeField(null=True)
     func_portal = models.CharField(max_length=50, null=True)

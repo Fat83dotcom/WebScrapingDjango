@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%block titulo%} UOL{%endblock%}
+{%block conteudo%}
+<main class="conteudoPortais">   
+    <h1>Portal UOL</h1>
+    <div class="conteudoPortais">
+        <h2>Última Atualização:</h2>
+        <p>{{dadosAtualizacao.dt_hr_pesquisa}}</p>
+    </div>
+    <section class="conteudoPortais">
+        {%for dadoP in dadosPortal%}
+            <nav class="conteudoPortais"> 
+                <div class="navNoticias">
+                    {%for dado in dadosPortal%}
+                        <a href="#{{dado.nome_sessao}}">{{dado.nome_sessao}}</a>
+                    {%endfor%}
+                </div>
+            </nav>
+            <h2 id="{{dadoP.nome_sessao}}">{{dadoP.nome_sessao|title}}</h2>
+            {%for dadoM in dadosMateria%}
+                {%if dadoM.referencia_site_id == dadoP.id_pk%}
+                    <div class="conteinercabecalhoMaterias">
+                        <div>
+                            <h2><a href="#{{dadoP.nome_sessao}}">{{dadoP.nome_sessao|title}}</a></h2>
+                        </div>
+                        <div>
+                            <h3>Data: </h3>
+                            <p>{{dadoM.dt_materia}}</p>
+                        </div>
+                        <div>
+                            <h3><a href="{{dadoM.link_materia}}" target="_blank">Matéria no Portal</a> </h3>
+                        </div>
+                    </div>
+                    <div class="conteinerTexto conteudoPortais">
+                        <h2>{{dadoM.titulo_materia}}</h2>
+                        <p>{{dadoM.texto_materia}}</p>
+                    </div>
+                {%endif%}
+            {%endfor%}
+        {%endfor%}
+    </section>
+</main>
+{%endblock%}
