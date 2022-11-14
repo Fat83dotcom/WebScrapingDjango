@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
-from .models import Portalcnn, Materiasportalcnn, Portalg1, Materiasportaluol
+from .models import Portalcnn, Materiasportalcnn, Portalg1, Materiasportalg1
 from .models import Portaluol, Materiasportaluol
 from django.db import connection
 
@@ -32,7 +32,7 @@ def coreG1(request):
     else:
         dadosAtualizacaoG1 = Portalg1.objects.get(pk=0)
         consultaSQLPortalG1 = Portalg1.objects.all().order_by('id_pk')
-        consultaSQLMateriasPortal = Materiasportaluol.objects.prefetch_related(
+        consultaSQLMateriasPortal = Materiasportalg1.objects.prefetch_related(
             'referencia_site').order_by('referencia_site_id')
         contexto = {
             'dadosPortal': consultaSQLPortalG1,

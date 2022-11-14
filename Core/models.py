@@ -46,7 +46,7 @@ class Portalg1(models.Model):
         db_table = 'portalg1'
 
 
-class Materiasportaluol(models.Model):
+class Materiasportalg1(models.Model):
     id_pk = models.IntegerField(primary_key=True)
     referencia_site = models.ForeignKey(
         'Portalg1', models.DO_NOTHING, db_column='referencia_site', blank=True, null=True)
