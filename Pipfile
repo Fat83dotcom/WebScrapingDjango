@@ -9,6 +9,7 @@ pillow = "*"
 psycopg2 = "*"
 beautifulsoup4 = "*"
 requests = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 autopep8 = "*"
